@@ -1,4 +1,4 @@
-# Lab1
+# Lecture1
 
 
 ## Facts
@@ -66,8 +66,8 @@ sibling(X,Y) :- parent(Z,X),parent(Z,Y),X\=Y.
 sister(X,Y):-     sibling(X,Y), female(X).
 uncle (X,Y):- parent(Z,Y), brother(Z,X),
 grandfather(X,Y):- male(X),    parent(X,Z),    parent(Z,Y).
-ancestor(X,Y):- parent(Z,Y), ancestor(X,Z).
 ancestor(X,Y):- parent(X,Y).
+ancestor(X,Y):- parent(Z,Y), ancestor(X,Z).
 ```
 Query:
 
@@ -90,3 +90,5 @@ cls :- write('\e[2J').
 ?- make.
 ```
 
+__________
+*EOL*

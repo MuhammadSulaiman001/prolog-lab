@@ -1,5 +1,6 @@
-# Notes
+### Useful links/tutorials
 
+http://www.learnprolognow.org/lpnpage.php
 
 
 ### Github Repos for more exercises
@@ -15,10 +16,10 @@ https://github.com/CSCI305/csci305-prolog-examples
 https://github.com/dbeqiraj/prolog
 
 
-
 ### TODOS
 
-- [ ] prolog in VSCode
+- prolog in VSCode
 
- - [ ] prolog sample projects/games integrated with HLL (C#, Java, Python..)
-   - [ ] from students
+- debugging in prolog
+
+ - prolog sample projects/games integrated with HLL (C#, Java, Python..)
