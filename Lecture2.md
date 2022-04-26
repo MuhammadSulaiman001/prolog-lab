@@ -1,6 +1,6 @@
 # Lecture2
 
-LECTURE1 REVISITED [Issue #1](/MuhammadSulaiman001/prolog-lab/issues/1)
+LECTURE1 REVISITED [Issue #1](/../../issues/1)
 
 Write the following sentences in prolog syntax:
 1. ahmad likes everything omar likes.
