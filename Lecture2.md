@@ -176,7 +176,7 @@ Write a suitable rule to:
         my_print(N) :- N1 is N - 1, my_print(N1), write(N), nl. % this will print the numbers from 0 to N
         /*
             but if the recursive call executed after the write instruction, then the numbers will be printed in descending order (from N to 0)
-            my_print(N) :- my_print(N1), write(N), nl, N1 is N - 1. % this will print the numbers from N to 0
+            my_print(N) :- write(N), nl, N1 is N - 1و my_print(N1). % this will print the numbers from N to 0
         */
        
     </details>
@@ -198,7 +198,7 @@ Write a suitable rule to:
         
         mult(X,0, 0).
         mult(0,X, 0).
-        mult(X,Y, Z):- X > 0, Y > 0,  Y1 is Y-1, muly(X, Y1, Z1), Z is Z1 + X.
+        mult(X,Y, Z):- X > 0, Y > 0,  Y1 is Y-1, mult(X, Y1, Z1), Z is Z1 + X.
     </details>
 
 6. Factorial
