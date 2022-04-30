@@ -1,6 +1,6 @@
 # Lecture3
 
-### LECTURE2 REVISITED: [Issue #2] (/../../issues/2)
+### LECTURE2 REVISITED: [Issue #2](/../../issues/2)
 
 Exercise1:
 
