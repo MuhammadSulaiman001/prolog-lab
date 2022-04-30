@@ -76,19 +76,5 @@ Query:
 ?- ancestor(abo_abo_abo_ahmad, Ahmad).
 ```
 
-## Utilities
-
-- % Single line comment 
-- /* Mutli-Line comment */
-- Clear-console rule:
-
-```
-cls :- write('\e[2J').
-```
-- To reload the file into prolog: Use this command
-```
-?- make.
-```
-
 __________
 *EOL*
