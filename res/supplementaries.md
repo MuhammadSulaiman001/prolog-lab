@@ -2,6 +2,9 @@
 
 http://www.learnprolognow.org/lpnpage.php
 
+https://www.tutorialspoint.com/prolog/index.htm
+
+https://www.doc.gold.ac.uk/~mas02gw/prolog_tutorial/prologpages/
 
 ### Github Repos for more exercises
 

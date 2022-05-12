@@ -37,4 +37,129 @@ Define connection_valid/2, to check if there is a connection between two nodes.
 
 _______
 
-Upcoming..
+## Exercises
+
+**meter_2_killo/2**
+
+    meter_2_killo(Killo, Meter) :- Meter is Killo * 1000;
+
+**calc_distance/3**
+
+    calc_distance(Speed, Time, Distance) :- Distance is Speed * Time.
+
+**calc_distance/2**
+
+    car_speed(blue_car, 50).
+    stopwatch(blue_car, 10).
+
+    calc_distance(Car, Distance) :- car_speed(Car, Speed), stopwatch(Car, Time),
+                                    calc_distance(Speed, Time, Distance).
+
+    % ?- calc_distance(blue_car, Distance).
+        Distance = 500.
+
+
+**dist/3 (Euclidean distance between two points)***
+
+sqrt/2 is predefined, try ?- sqrt(25, X). in the command-line.
+
+```
+distance(point(X, Y), point(X1,Y1), Res) :- 
+                Z1 is X-X1, Z2 is Y-Y1, 
+                Z3 is Z1*Z1, Z4 is Z2*Z2, 
+                Z5 is Z3+Z4, 
+                sqrt(Z5,Res).
+
+% -? distance(point(0, 0), point(3, 4), X).  
+%    X = 5.
+```
+
+**is_natural/3**
+
+    is_natural(0).
+    is_natural(X):- X > 0, X1 is X - 1, is_natural(X1).
+
+**gcd/3 (Greatest Common Divisor)**
+
+Definition: GCD of two non-zero integers is the largest positive integer that divides the numbers without a remainder.
+if a=b, then GCD is a.
+If b=0, then GCD is a.
+Else, GCD(a,b) = GCD(b,c), where c = a modulo b
+
+```
+gcd(X1,0,X1).
+gcd(X1,X1,X2).
+gcd(X1,X2,Y) :- X1<X2 , gcd(X2,X1,Y).
+gcd(X1,X2,Y) :- X3 is mod(X1, X2), gcd(X2,X3,Y), !.
+
+% ?- gcd(25, 20, Res).
+%        Res = 5.
+```
+
+**run/0 (Read user input and format the output)** 
+
+```
+% ?- write('Enter the first number: '), read(FirstNumber).
+
+run :-  write('Enter the first number: '), read(FirstNumber), 
+        write('Enter the second number: '), read(SecondNumber),  
+
+        Plus is FirstNumber + SecondNumber,
+        format('~w + ~w = ~w', [FirstNumber, SecondNumber, Plus]), nl,
+
+        Minus is FirstNumber - SecondNumber,
+        format('~w - ~w = ~w', [FirstNumber, SecondNumber, Minus]), nl,
+
+        Mult is FirstNumber * SecondNumber,
+        format('~w x ~w = ~w', [FirstNumber, SecondNumber, Mult]), nl,
+
+        Div is FirstNumber / SecondNumber,
+        format('~w / ~w = ~w', [FirstNumber, SecondNumber, Div]).
+
+% ?- run.
+
+```
+
+## Lists
+
+```
+?- L = [mia,  [vincent,  jules],  [tom,  wife(tom)], 2, true, []]
+
+?- [Head|Tail] = [mia,  tom,  julie,  mike].
+
+?- [_,X,_,Y|_]  =  [[],  dead(z),  [2,  [b,  c]],  [],  Z]. 
+
+?- member(ahmad,[1,2,3, ahmad]).
+
+?- member(X,[1,2,3, ahmad]).
+
+?- length([1,2,3, ahmad], X).
+
+?- append([1,2,[a, b], X).
+
+```
+## TODO (operations on lists)
+
+- len/2
+- get_last_element/2
+- get_last_but_one/2 (i.e. the element before the last element)
+- reverse/2
+- is_symmetric/1
+- insert at position/3
+- get N'th item/3
+- Sort list of numbers/2
+- is_even_length/1
+- get_union/3
+- get_max/2
+- split_at_index/4
+- sum_items_values/2
+- get_intersection/3
+- concat/3
+- remove_item/3
+- append_if_not_exist/3
+
+
+## Bonus
+
+Prepare a demo to illustrate how prolog can be used in a real-life application (desktop app, web app, mobile app, etc..) 
+- you can choose whatever technology you want

@@ -37,3 +37,17 @@ Retracting
 ?- retract(happy(X) :- ite-student(X)).
 ?- happy(ahmad). % will return false
 ```
+
+
+Close the command-line
+
+```
+halt.
+```
+
+
+Read user input example
+
+```
+write('Enter the first number: '), read(FirstNumber).
+```
