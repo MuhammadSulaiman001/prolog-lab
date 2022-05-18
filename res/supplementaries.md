@@ -6,6 +6,10 @@ https://www.tutorialspoint.com/prolog/index.htm
 
 https://www.doc.gold.ac.uk/~mas02gw/prolog_tutorial/prologpages/
 
+https://medium.com/@karandavuluri/debugging-and-testing-prolog-9d269c7296d1
+
+https://www.101computing.net/tag/prolog/
+
 ### Github Repos for more exercises
 
 https://github.com/Anniepoo/prolog-examples

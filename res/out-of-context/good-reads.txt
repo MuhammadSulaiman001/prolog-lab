@@ -1,6 +1,11 @@
+https://github.com/dtonhofer/prolog_notes
+
 https://sijinjoseph.com/programmer-competency-matrix/
 
 https://github.com/kamranahmedse/developer-roadmap
 
 https://www.hackerearth.com/recruit/resources/insights/developer-survey-2021/
+
 https://insights.stackoverflow.com/survey/2021
+
+https://codeburst.io/a-10-step-guide-to-set-up-your-laptop-for-serious-development-b6d5fdd96525

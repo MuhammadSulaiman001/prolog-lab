@@ -77,7 +77,7 @@ Check if predicate is defined using **`current_predicate()`** function
 
 Unit Testing
 
-- See [testing_demo](/testing_demo/ReadMe.md)
+- See [testing_demo](/testing_demo)
 
 
 Conditional-expression `(if -> then; else)` beware about the syntax

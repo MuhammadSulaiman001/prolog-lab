@@ -129,6 +129,8 @@ run :-  write('Enter the first number: '), read(FirstNumber),
 
 ?- [_,X,_,Y|_]  =  [[],  dead(z),  [2,  [b,  c]],  [],  Z]. 
 
+?- is_list([ahmad]).
+
 ?- member(ahmad,[1,2,3, ahmad]).
 
 ?- member(X,[1,2,3, ahmad]).
@@ -138,28 +140,3 @@ run :-  write('Enter the first number: '), read(FirstNumber),
 ?- append([1,2,[a, b], X).
 
 ```
-## TODO (operations on lists)
-
-- len/2
-- get_last_element/2
-- get_last_but_one/2 (i.e. the element before the last element)
-- reverse/2
-- is_symmetric/1
-- insert at position/3
-- get N'th item/3
-- Sort list of numbers/2
-- is_even_length/1
-- get_union/3
-- get_max/2
-- split_at_index/4
-- sum_items_values/2
-- get_intersection/3
-- concat/3
-- remove_item/3
-- append_if_not_exist/3
-
-
-## Bonus
-
-Prepare a demo to illustrate how prolog can be used in a real-life application (desktop app, web app, mobile app, etc..) 
-- you can choose whatever technology you want
