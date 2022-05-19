@@ -10,6 +10,8 @@ https://medium.com/@karandavuluri/debugging-and-testing-prolog-9d269c7296d1
 
 https://www.101computing.net/tag/prolog/
 
+[Nani-search](https://github.com/YueXX/Nani-search-game)
+
 ### Github Repos for more exercises
 
 https://github.com/Anniepoo/prolog-examples

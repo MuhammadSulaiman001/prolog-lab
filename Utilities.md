@@ -25,8 +25,8 @@ To reload the file into prolog: Use this command
 Assertion
 
 ```
-?- assert(ite-student(ahmad)).
-?- assert(happy(X) :- ite-student(X)).
+?- assert(ite_student(ahmad)).
+?- assert(happy(X) :- ite_student(X)).
 ?- happy(ahmad). % will return true
 ```
 
