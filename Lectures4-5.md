@@ -76,7 +76,7 @@ remove_item(X, [Y|L2], [Y|L1]) :- remove_item(X,L2,L1).
 
 **parse/1**
 
-Suppose we have the following DFS automaton
+Suppose we have the following DFS automaton (for Syrians, images are not shown in github unless you run a VPN/Proxy :broken_heart:)
 
 ![automaton](/res/automaton.png)
 
