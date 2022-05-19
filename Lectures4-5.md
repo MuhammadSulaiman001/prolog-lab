@@ -1,6 +1,5 @@
 # Lectures4-5
 
-
 ### LECTURE3 REVISITED: [Issue #4](/../../issues/4)
 
 Suppose we have the following dialogue:
@@ -28,28 +27,29 @@ ___________
 
 ## Exercises:
 
-**len/2**
+### **`len/2`**
 
 Takes a list and returns the length of it, same as predefined length/2
 
-```
+```prolog
 len([],0). 
 len([_|T],N)  :-  len(T,X),  N  is  X+1.
 ```
 
-**concat/3**
+### **`concat/3`**
 
-Concatenates two lists and put the result in parameter3
-```
+Concatenates two lists and put the result in 3rd parameter
+
+```prolog
 concat([],L,L).
 concat([X1|L1],L2,[X1|L3]) :- concat(L1,L2,L3).
 ```
 
-**a2b/2**
+### **`a2b/2`**
 
 Validates that parameter1 is a list of a's lenght N and parameter2 is list of b's of length N as well.
 
-```
+```prolog
 a2b([],[]).
 a2b([a|Ta],[b|Tb])  :-  a2b(Ta,Tb).
 /*
@@ -62,25 +62,25 @@ a2b([a|Ta],[b|Tb])  :-  a2b(Ta,Tb).
 /*
 ```
 
-**remove_item/3**
+### **`remove_item/3`**
 
 Removes param1 from param2 if exists, put the resultant list in param3
 
-```
+```prolog
 remove_item(X, [X], []).
 remove_item(X,[X|L1], L1).
 remove_item(X, [Y|L2], [Y|L1]) :- remove_item(X,L2,L1).
 ```
 
-**parse/1**
+### **`parse/1`**
 
-Suppose we have the following DFS automaton (for Syrians, images are not shown in github unless you run a VPN/Proxy :broken_heart:)
+Suppose we have the following DFS automaton (for Syrians, images are not shown in github unless you run a VPN/Proxy 💔)
 
 ![automaton](/res/automaton.png)
 
 We can model it with the following facts
 
-```
+```prolog
 delta(0,a,1).   
 delta(0,b,0).
 delta(1,a,1).
@@ -91,9 +91,9 @@ start(0).
 final(2).
 ```
 
-parse/1 will take a string and tests whether it belongs to the language represented by the automaton or not.. 
+`parse/1` will take a string and tests whether it belongs to the language represented by the automaton or not.. 
 
-```
+```prolog
 % you can remove the write() instructions.. they are used just for logging..
 
 trans(X,[]) :- 
@@ -111,35 +111,33 @@ trans(X,[A|B]) :-
       trans(Y,B).  
 
 parse(L) :- start(S), 
-            trans(S,L).
-
- 
+            trans(S,L). 
 ```
 
 Examples:
 
-```
+```prolog
 ?- parse([b,b,a,a,b,a,b]).
-    true
+%    true
 ?- parse([b,b,a]).
-    false
+%    false
 ```
 
 ## TODO
 
-- get_last_element/2
-- get_last_but_one/2 (i.e. the element before the last element)
-- reverse/2
-- is_symmetric/1
-- insert_at_position/3
-- get_Nth_item/3
-- sort_list_of_numbers/2
-- is_even_length/1
-- get_union/3
-- get_max/2
-- split_at_index/4
-- sum_items_values/2
-- get_intersection/3
+- `get_last_element/2`
+- `get_last_but_one/2` (i.e. the element before the last element).
+- `reverse/2`
+- `is_symmetric/1`
+- `insert_at_position/3`
+- `get_Nth_item/3`
+- `sort_list_of_numbers/2`
+- `is_even_length/1`
+- `get_union/3`
+- `get_max/2`
+- `split_at_index/4`
+- `sum_items_values/2`
+- `get_intersection/3`
 
 
 ## QUIZ (26-5-2022)
