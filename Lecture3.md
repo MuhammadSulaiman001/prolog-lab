@@ -149,5 +149,9 @@ run :-  write('Enter the first number: '), read(FirstNumber),
 
 ?- length([1,2,3, ahmad], X).
 
-?- append([1,2,[a, b], X).
+?- append([1,2,[a, b]], [X, X2, X3]). %append/2 (merge 2 lists)
+%   [1,2,[a,b],X,X2,X3]
+
+?- append([[1,2,4], [5, 6, 7]]). %append/1 (list of lists)
+%   [1,2,4,5,6,7]
 ```
