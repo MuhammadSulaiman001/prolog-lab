@@ -1,1 +1,2 @@
-*.plt linguist-detectable=false
+*.plt linguist-vendored
+# *.* linguist-language=Prolog
