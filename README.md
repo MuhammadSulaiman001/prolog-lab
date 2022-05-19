@@ -12,11 +12,11 @@
     3.1. Right-click inside a folder of your choice -> choose Git Bash
     
     3.2. Clone
-    ```
+    ```bash
     git clone https://github.com/MuhammadSulaiman001/prolog-lab.git
     ```
 4. From time to time, you can Sync your code local copy with this remote copy using
-    ```
+    ```bash
     git pull
     ```
     

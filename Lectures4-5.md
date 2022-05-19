@@ -5,16 +5,14 @@
 
 Suppose we have the following dialogue:
 
-```
-Ahmad says: "I do nothing"
-Dan says: "I do nothing"
-Bassel says: "Dan is guilty"
-Camal says: "Bassel is guilty"
-```
+- Ahmad says: "I do nothing"
+- Dan says: "I do nothing"
+- Bassel says: "Dan is guilty"
+- Camal says: "Bassel is guilty"
 
 Knowing that only one of them is honest, fix the following code to figure out who is the guilty one..
 
-```
+```prolog
 guilty(Guilty):-
     member(Guilty, [ahmad, bassel, camal, dan]),
     (Guilty = ahmad -> Ahmad =1; Ahmad =0),
