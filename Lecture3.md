@@ -2,11 +2,11 @@
 
 ### LECTURE2 REVISITED: [Issue #2](/../../issues/2)
 
-Exercise1:
+## Exercise 1:
 
-The term in Fibonacci Series is defined as the sum of the previous 2 terms' values, i.e 1,1,2,3,5,8,13,..
+The term in Fibonacci Series is defined as the sum of the previous 2 terms' values, i.e: `1,1,2,3,5,8,13,...`
 
-Define fib/2, where the first parameter is the term index (starts from 1), the second parameter is the term value. 
+Define `fib/2`, where the first parameter is the term index (starts from 1), the second parameter is the term value. 
 
 ```prolog
 % Sample Queries:
@@ -18,7 +18,7 @@ Define fib/2, where the first parameter is the term index (starts from 1), the s
     Res = 8
 ```
 
-Exercise2:
+## Exercise 2:
 
 Given a directed graph like the following:
 
@@ -31,7 +31,7 @@ link(node2, node5).
 link(node2, node6).
 ```
     
-Define connection_valid/2, to check if there is a connection between two nodes.
+Define `connection_valid/2`, to check if there is a connection between two nodes.
 
 ```prolog
 % Sample Queries:
@@ -45,19 +45,19 @@ _______
 
 ## Exercises
 
-**meter_2_killo/2**
+### **`meter_2_killo/2`**
 
 ```prolog
 meter_2_killo(Killo, Meter) :- Meter is Killo * 1000;
 ```
 
-**calc_distance/3**
+### **`calc_distance/3`**
 
 ```prolog
 calc_distance(Speed, Time, Distance) :- Distance is Speed * Time.
 ```
 
-**calc_distance/2**
+### **`calc_distance/2`**
 
 ```prolog
 car_speed(blue_car, 50).
@@ -70,7 +70,7 @@ calc_distance(Car, Distance) :- car_speed(Car, Speed), stopwatch(Car, Time),
     Distance = 500.
 ```
 
-**dist/3 (Euclidean distance between two points)***
+### **`dist/3` (Euclidean distance between two points)**
 
 sqrt/2 is predefined, try ?- sqrt(25, X). in the command-line.
 
@@ -85,14 +85,14 @@ distance(point(X, Y), point(X1,Y1), Res) :-
 %    X = 5.
 ```
 
-**is_natural/3**
+### **`is_natural/3`**
 
 ```prolog
 is_natural(0).
 is_natural(X):- X > 0, X1 is X - 1, is_natural(X1).
 ```
 
-**gcd/3 (Greatest Common Divisor)**
+### **`gcd/3` (Greatest Common Divisor)**
 
 Definition: GCD of two non-zero integers is the largest positive integer that divides the numbers without a remainder.
 if a=b, then GCD is a.
@@ -109,7 +109,7 @@ gcd(X1,X2,Y) :- X3 is mod(X1, X2), gcd(X2,X3,Y), !.
 %        Res = 5.
 ```
 
-**run/0 (Read user input and format the output)** 
+### **`run/0` (Read user input and format the output)** 
 
 ```prolog
 % ?- write('Enter the first number: '), read(FirstNumber).

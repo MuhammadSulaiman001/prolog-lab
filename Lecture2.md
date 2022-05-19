@@ -5,6 +5,7 @@
 [Issue #1](/../../issues/1)
 
 Write the following sentences in prolog syntax:
+
 1. ahmad likes everything omar likes.
 2. human is mammal.
 3. ahmad hits the ball with his rod.
@@ -13,6 +14,7 @@ Write the following sentences in prolog syntax:
 6. X hates everybody who loves dogs and hates cats.
 7. X loves everybody who has money and is pretty.
 8. Who ate my pizza?
+
 _______
 
 ## Data types
@@ -24,7 +26,6 @@ _______
 3. Variables: `Ahmad`.
 
 4. Predicates: `line(point(X1,Y1),point(X2,Z2))`.
-
 
 ## Unification
 
@@ -109,14 +110,12 @@ add_3_and_double(X,Y) :-  Y is (X+3) * 2.
 ?- 2+1 < 3+2.
 ```
 
-Remember:
-
-```prolog
-?- 4 = 4. % true, not because 4 equals 4, but because string 4 matches with string 4, like a = a.
-?- 2+2 = 4. % so this will return false.
-?- 2+2 =:= 4. % this is a valid arithmetic.
-```
-
+> Remember:
+> ```prolog
+> ?- 4 = 4. % true, not because 4 equals 4, but because string 4 matches with string 4, like a = a.
+> ?- 2+2 = 4. % so this will return false.
+> ?- 2+2 =:= 4. % this is a valid arithmetic.
+> ```
 
 ## Recursion
 
@@ -165,7 +164,7 @@ What is the output?
 
 Write a suitable rule to:
 
-1. add/3, add X to Y and put result in Z
+1. `add/3`, add X to Y and put result in Z
 
     <details>
     <summary>Solution</summary>
@@ -176,7 +175,7 @@ Write a suitable rule to:
 
     </details>
 
-2. abs/2, Absolute value of X, put the result in Y
+2. `abs/2`, Absolute value of X, put the result in Y
 
     <details>
     <summary>Solution</summary>
@@ -187,7 +186,7 @@ Write a suitable rule to:
 
     </details>
 
-3. my_print/1, print the numbers from 0 to N
+3. `my_print/1`, print the numbers from 0 to N
 
     <details>
     <summary>Solution</summary>
@@ -203,7 +202,7 @@ Write a suitable rule to:
        
     </details>
 
-4. sum/2, Sum on numbers from 0 to N, put the result in Res
+4. `sum/2`, Sum on numbers from 0 to N, put the result in Res
 
     <details>
     <summary>Solution</summary>
@@ -216,7 +215,7 @@ Write a suitable rule to:
 
     </details>
 
-5. mult/2, do X * Y recursivly and but the result in Z
+5. `mult/2`, do X * Y recursivly and but the result in Z
 
     <details>
     <summary>Solution</summary>

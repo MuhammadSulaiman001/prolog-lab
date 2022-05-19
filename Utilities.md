@@ -1,6 +1,6 @@
 # Utilities
 
-Write on the console:
+## Write on the console
 
 ```prolog
 ?- nl. % new line, returns true.
@@ -9,26 +9,26 @@ Write on the console:
 ?- X is 3 + 5, write(X).
 ```
 
-Clear-console rule:
+## Clear the console
 
 ```prolog
 cls :- write('\e[2J').
 ```
 
+## Comments
 ```prolog
 % Single line comment 
-```
 
-```prolog
 /* Mutli-Line comment */
 ```
 
-To reload the file into prolog: Use this command
+## Reload the file in prolog
+
 ```prolog
 ?- make.
 ```
 
-Assertion
+## Assertion
 
 ```prolog
 ?- assert(ite-student(ahmad)).
@@ -36,7 +36,7 @@ Assertion
 ?- happy(ahmad). % will return true
 ```
 
-Retracting
+## Retracting
 
 ```prolog
 ?- retract(ite-student(ahmad)).
@@ -44,21 +44,19 @@ Retracting
 ?- happy(ahmad). % will return false
 ```
 
-
-Close the command-line
+## Close the command-line
 
 ```prolog
 halt.
 ```
 
-
-Read user input example
+## Read user input example
 
 ```prolog
 write('Enter the first number: '), read(FirstNumber).
 ```
 
-Negation
+## Negation
 
 ```prolog
 \+ rule.
@@ -66,12 +64,12 @@ not(rule).
 
 ```
 
-Debugging
+## Debugging
     
 Swi-Prolog -> Debug -> Graphical Debugger -> `?- trace.` -> some query -> use the arrows to step in/over the code.
 
-
-Check if predicate is defined using **`current_predicate()`** function
+## Check if predicate is defined
+using **`current_predicate()`** function
 
 ```prolog
 ?- current_predicate(a/1). % predicate a/1 is not defined
@@ -82,11 +80,12 @@ Check if predicate is defined using **`current_predicate()`** function
 %    true
 ```
 
-Unit Testing
+## Unit Testing
 
 - See [testing_demo](/testing_demo)
 
-Conditional-expression `(if -> then; else)` beware about the syntax
+## Conditional-expression
+`(if -> then; else)` beware about the syntax
 
 ```prolog
 ?- 3 =\= 4 % numeric comparasion
