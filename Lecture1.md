@@ -3,48 +3,57 @@
 
 ## Facts
 
-    john_is_cold.
-    raining.
-
+```prolog
+john_is_cold.
+raining.
+```
 
 ## Predicates
 
-    eats(fred,oranges).
-    eats(fred,apple).
-    travel(ahmad, place1, place2, train).
-
+```prolog
+eats(fred,oranges).
+eats(fred,apple).
+travel(ahmad, place1, place2, train).
+```
 
 ## Natural Language -> prolog
 
-
-- example1:
+### Example 1:
 
 Cindy likes everything that Bill likes
 
-    likes(cindy, Something):- likes(bill, Something).
+```prolog
+likes(cindy, Something):- likes(bill, Something).
+```
 
-- example2:
+### Example 2:
 
 Caitlin likes everything that is green
 
-    likes(caitlin, Something):- green(Something).
+```prolog
+likes(caitlin, Something):- green(Something).
+```
 
-- example3:
+### Example 3:
 
-If human(X) then mortal(X):
+If `human(X)` then `mortal(X)`:
 
-    moral(X) :- human(X).
-
+```prolog
+moral(X) :- human(X).
+```
 
 ## Variables
-    ?- eats(fred,FoodItem). 
-    ?- eats(X, Y).
+
+```prolog
+?- eats(fred,FoodItem). 
+?- eats(X, Y).
+```
 
 Use `;` to investigate more solutions if exist.
 
 ## Recursion
 
-```
+```prolog
 parent(abo_abo_abo_ahmad, abo_abo_ahmad).
 parent(abo_abo_ahmad, abo_ahmad).
 parent(abo_ahmad, ahmad).
@@ -57,21 +66,21 @@ female(salma).
 female(samira).
 female(hamida).
 
-father(X,Y) :- parent(X,Y), male(X).
-mother(X,Y) :- parent(X,Y), female(X).
-child(X,Y) :- parent( Y,X).
-daughter(X,Y) :- child(X,Y), female(X).
-son(X,Y) :- child(X,Y), male(X).
-sibling(X,Y) :- parent(Z,X),parent(Z,Y),X\=Y.
-sister(X,Y):-     sibling(X,Y), female(X).
+father(X,Y):- parent(X,Y), male(X).
+mother(X,Y):- parent(X,Y), female(X).
+child(X,Y):- parent( Y,X).
+daughter(X,Y):- child(X,Y), female(X).
+son(X,Y):- child(X,Y), male(X).
+sibling(X,Y):- parent(Z,X), parent(Z,Y), X\=Y.
+sister(X,Y):- sibling(X,Y), female(X).
 uncle (X,Y):- parent(Z,Y), brother(Z,X),
-grandfather(X,Y):- male(X),    parent(X,Z),    parent(Z,Y).
+grandfather(X,Y):- male(X), parent(X,Z), parent(Z,Y).
 ancestor(X,Y):- parent(X,Y).
 ancestor(X,Y):- parent(Z,Y), ancestor(X,Z).
 ```
 Query:
 
-```
+```prolog
 ?- ancestor(abo_abo_abo_ahmad, ahmad).
 ?- ancestor(abo_abo_abo_ahmad, Ahmad).
 ```
