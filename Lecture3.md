@@ -150,5 +150,5 @@ run :-  write('Enter the first number: '), read(FirstNumber),
 ?- length([1,2,3, ahmad], X).
 
 ?- append([1,2,3], [a, b, c], X).
-%   X = [1,2,4,a,b,c]
+%   X = [1,2,3,a,b,c]
 ```
