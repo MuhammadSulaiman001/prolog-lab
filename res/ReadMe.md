@@ -10,13 +10,23 @@
 
 * https://www.101computing.net/tag/prolog/
 
+* http://www.amzi.com/AdventureInProlog/a1start.php
+
 * [Nani-search](https://github.com/YueXX/Nani-search-game)
 
 * prolog in VSCode.
     - [ language support](https://marketplace.visualstudio.com/items?itemName=arthurwang.vsc-prolog)
-    - ~~[markdown formatter](https://marketplace.visualstudio.com/items?itemName=mervin.markdown-formatter)~~ Do not use it, it really sucks :sweat_smile:
+    - ~~[markdown formatter](https://marketplace.visualstudio.com/items?itemName=mervin.markdown-formatter)~~ Do not use it for prolog, neither ~~[prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)~~, they sucks :sweat_smile:
 
-### Github Repos for more exercises
+* [Baby Lizards Problem](https://jewel-case-74c.notion.site/Baby-Lizards-Problem-9e53f0f634db45fba21277f86b2c2338)
+
+### Github Repos
+
+* https://github.com/Vulwsztyn/prolog-for-dummies
+
+* https://github.com/klaussinani/awesome-prolog
+
+* https://github.com/PlayingWithProlog/alexa
 
 * https://github.com/Anniepoo/prolog-examples
 

@@ -28,6 +28,29 @@ point([6,0], female).
 % ?- tag([3,-1], Label). % bonus
 %    Label = unkown.
 ```
+
 ---
 
+# CUT
+
 Upcoming..
+
+# Negation as Failure
+
+Upcoming..
+
+# Dynamics and looping
+
+Upcoming..
+
+
+## QUIZ (2-6-2022, in-pairs, duration = 1 hour)
+
+<p align="center">
+
+<img src="res/me-with-coffin-dancers.PNG" alt="drawing" width="400"/>
+
+</p>
+
+______________
+*EOL*
