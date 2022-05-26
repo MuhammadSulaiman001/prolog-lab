@@ -145,7 +145,8 @@ Examples:
 
 <p align="center">
 
-    <img src="res/me-with-coffin-dancers.PNG" alt="drawing" width="400"/>
+<img src="res/me-with-coffin-dancers.PNG" alt="drawing" width="400"/>
+
 </p>
 
 QUIZ1 [7 minutes]
