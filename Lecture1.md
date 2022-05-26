@@ -1,6 +1,5 @@
 # Lecture1
 
-
 ## Facts
 
 ```prolog
@@ -36,7 +35,7 @@ likes(caitlin, Something):- green(Something).
 
 ### Example 3:
 
-If `human(X)` then `mortal(X)`:
+If `human(X)` then `mortal(X)` :
 
 ```prolog
 moral(X) :- human(X).
@@ -78,7 +77,8 @@ grandfather(X,Y):- male(X), parent(X,Z), parent(Z,Y).
 ancestor(X,Y):- parent(X,Y).
 ancestor(X,Y):- parent(Z,Y), ancestor(X,Z).
 ```
-Query:
+
+Query
 
 ```prolog
 ?- ancestor(abo_abo_abo_ahmad, ahmad).
