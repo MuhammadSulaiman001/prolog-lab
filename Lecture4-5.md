@@ -146,6 +146,7 @@ Examples:
 <p align="center">
 
     <img src="res/me-with-coffin-dancers.PNG" alt="drawing" width="400"/>
+</p>
 
 QUIZ1 [7 minutes]
 
@@ -154,7 +155,7 @@ recommend(egypt, "www.google.com/song1").
 recommend(syria, "www.google.com/song3").
 recommend(iraq, "www.google.com/song1").
 
-?- recommend(Song).
+% ?- recommend(Song).
 % Are you from egypt? [y/n]
 %    n.
 % Are you from syria? [y/n]
@@ -180,11 +181,11 @@ QUIZ2. [14 minutes]
 
 inner_count_less_than([], N, 0).
 inner_count_less_than([H|T], N, Res) :- inner_count_less_than(T, N, Res1), 
-										(is_list(H) -> 
-														inner_count_less_than(H, N, Res2), Res is Res1 + Res2;
-														(integer(H), H < N -> 
-																			Res is Res1 + 1; Res is Res1)
-										).
+        (is_list(H) -> 
+                    inner_count_less_than(H, N, Res2), Res is Res1 + Res2;
+                    (integer(H), H < N -> 
+                                    Res is Res1 + 1; Res is Res1)
+		).
 
 % Note: this exercise is similar to count_less_than/3, which was well-explained in the class.
 ```
