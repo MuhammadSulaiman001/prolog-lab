@@ -281,7 +281,8 @@ descend(X, Y) :- child(X, Z), descend(Z, Y).
 
 ```prolog
 /*
-sample usage..
+% Sample usage.. User is X, Computes is O.
+% Game ends when One player wins or the Grid is filled with no winner.
 ?- play.
 
     0, 0, 0
@@ -307,7 +308,61 @@ sample usage..
     0, 0, X
 
     You win.
+    true.
 */
+
+% MY SOLUTION (you can submit your solution in the issues)
+
+play :- play([0, 0, 0, 0, 0, 0, 0, 0, 0]).
+
+play(Grid) :- print_grid(Grid),
+              get_valid_cells(Grid, EmptyCells), 
+              format('Your turn.. available cells are ~w: ',[EmptyCells]), 
+              % game ends if player inserts non-valid value :(
+              read(XPosition), member(XPosition, EmptyCells),
+              insert_char_at_position(x, XPosition, Grid, NewGrid),
+              can_continue_playing(NewGrid), % print the winner name inside this function
+              get_valid_cells(NewGrid, NewEmptyCells),
+              random_member(OPosition, NewEmptyCells), % or simply: [OPosition|_] = NewEmptyCells.
+              insert_char_at_position(o, OPosition, NewGrid, NextRoundGrid),
+              can_continue_playing(NextRoundGrid), % print the winner name inside this function
+              play(NextRoundGrid).
+
+play(_). % this helps not printing false when at the end of the game.
+
+get_valid_cells([], []).
+get_valid_cells([H|T], EmptyCells) :- H \= 0, get_valid_cells(T, EmptyCells), !. 
+
+get_valid_cells([H|T], [Pos|EmptyCells]) :- length(T, Len), Pos is (9 - Len),
+                                            get_valid_cells(T, EmptyCells).
+
+insert_char_at_position(Char, 1, [GridH|GridT], [Char|GridT]). % :- !.
+insert_char_at_position(Char, Position, [GridH|GridT], [GridH|NewGridT]) :- 
+                log('insert_char_at_position'),
+                NewPos is Position - 1, 
+                insert_char_at_position(Char, NewPos, GridT, NewGridT).
+
+can_continue_playing(Grid) :- log('can_continue_playing'), get_winner_name(Grid, WinnerName),
+                              (WinnerName = x -> write('You Win'),  nl,  !, fail; true),
+                              (WinnerName = o -> write('You Lose'), nl,  !, fail; true).
+
+log(_).
+% log(Msg) :- write(Msg), nl.
+
+get_winner_name([A, A, A, Four, Five, Six, Seven, Eight, Nine], A) :- A = x; A = o.
+get_winner_name([One, Two, Three, A, A, A, Seven, Eight, Nine], x) :- A = x; A = o.
+get_winner_name([One, Two, Three, Four, Five, Six, A, A, A], x) :- A = x; A = o.
+get_winner_name([A, Two, Three, A, Five, Six, A, Eight, Nine], x) :- A = x; A = o.
+get_winner_name([One, A, Three, Four, A, Six, Seven, A, Nine], x) :- A = x; A = o.
+get_winner_name([One, Two, A, Four, Five, A, Seven, Eight, A], x) :- A = x; A = o.
+get_winner_name([A, Two, Three, Four, A, Six, Seven, Eight, A], x) :- A = x; A = o.
+get_winner_name([One, Two, A, Four, A, Six, A, Eight, Nine], x) :- A = x; A = o.
+get_winner_name(_, noBody).
+
+print_grid([One, Two, Three, Four, Five, Six, Seven, Eight, Nine]) :- 
+    format('~w ~w ~w', [One, Two, Three]), nl,
+    format('~w ~w ~w', [Four, Five, Six]), nl,
+    format('~w ~w ~w', [Seven, Eight, Nine]), nl.
 ```
 ______________
 *EOL*
