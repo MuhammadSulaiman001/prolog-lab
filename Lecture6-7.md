@@ -269,7 +269,7 @@ descend(X, Y) :- child(X, Z), descend(Z, Y).
 % ?- findall(X, descend(martha, X), Z), length(Z, N).
 ```
 
-## QUIZ (2-6-2022, in-pairs, duration = 1 hour)
+## QUIZ (2-6-2022, duration = 1 hour)
 
 <p align="center">
 
