@@ -44,7 +44,7 @@ Upcoming..
 Upcoming..
 
 
-## QUIZ (2-6-2022, in-pairs, duration = 1 hour)
+## QUIZ (2-6-2022, duration = 1 hour)
 
 <p align="center">
 
