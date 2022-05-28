@@ -277,12 +277,47 @@ descend(X, Y) :- child(X, Z), descend(Z, Y).
 
 </p>
 
-### X/O Game
+### X/O Game [^1]
 
 ```prolog
 /*
-% Sample usage.. User is X, Computes is O.
+
+Q1. print_grid/1 (1 Mark)
+
+% example
+?- print_grid([x, 0, x, 0, x, o, o, 0, o])
+	x 0 x
+	0 x o
+	o 0 o
+
+Q2. get_empty_cells/2 (2 Marks)
+
+% examples
+?- get_empty_cells([0, 0, 0, 0, 0, 0, 0, 0, 0], EmptyCells).
+	EmptyCells = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+?- get_empty_cells([0, 0, x, x, x, o, o, 0, o], EmptyCells).
+	EmptyCells = [2, 4, 8]
+
+Q3. insert_char_at_position/4 (2 Marks)
+
+% example
+?- insert_char_at_position(x, 2, [x, 0, x, 0, x, o, o, 0, o], UpdatedGrid).
+	UpdatedGrid = [x, x, x, 0, x, o, o, 0, o]
+
+Q4. get_winner_name/2 (WinnerName can be x, o or noBody) (2 Marks)
+
+% example
+?- get_winner_name([x, x, x, 0, x, o, o, 0, o], WinnerName).
+	WinnerName = x
+
+Q5. play/0. this will start the X/O game using the previous rules.. (3 Marks)
+
+% User is X, Computes is O.
 % Game ends when One player wins or the Grid is filled with no winner.
+
+% Example
+
 ?- play.
 
     0, 0, 0
@@ -291,21 +326,21 @@ descend(X, Y) :- child(X, Z), descend(Z, Y).
 
     Your turn.. available cells are [1,2,3,4,5,6,7,8,9]: 5
 
-    0, 0, O
-    0, X, 0
+    0, 0, o
+    0, x, 0
     0, 0, 0
 
     Your turn.. available cells are [1,2,4,6,7,8,9]: 1
 
-    X, 0, O
-    0, X, O
+    x, 0, o
+    0, x, o
     0, 0, 0
 
     Your turn.. available cells are [2,4,7,8,9]: 9
 
-    X, 0, O
-    0, X, O
-    0, 0, X
+    x, 0, o
+    0, x, o
+    0, 0, x
 
     You win.
     true.
@@ -316,13 +351,13 @@ descend(X, Y) :- child(X, Z), descend(Z, Y).
 play :- play([0, 0, 0, 0, 0, 0, 0, 0, 0]).
 
 play(Grid) :- print_grid(Grid),
-              get_valid_cells(Grid, EmptyCells), 
+              get_empty_cells(Grid, EmptyCells), 
               format('Your turn.. available cells are ~w: ',[EmptyCells]), 
               % game ends if player inserts non-valid value :(
               read(XPosition), member(XPosition, EmptyCells),
               insert_char_at_position(x, XPosition, Grid, NewGrid),
               can_continue_playing(NewGrid), % print the winner name inside this function
-              get_valid_cells(NewGrid, NewEmptyCells),
+              get_empty_cells(NewGrid, NewEmptyCells),
               random_member(OPosition, NewEmptyCells), % or simply: [OPosition|_] = NewEmptyCells.
               insert_char_at_position(o, OPosition, NewGrid, NextRoundGrid),
               can_continue_playing(NextRoundGrid), % print the winner name inside this function
@@ -330,11 +365,11 @@ play(Grid) :- print_grid(Grid),
 
 play(_). % this helps not printing false when at the end of the game.
 
-get_valid_cells([], []).
-get_valid_cells([H|T], EmptyCells) :- H \= 0, get_valid_cells(T, EmptyCells), !. 
+get_empty_cells([], []).
+get_empty_cells([H|T], EmptyCells) :- H \= 0, get_empty_cells(T, EmptyCells), !. 
 
-get_valid_cells([H|T], [Pos|EmptyCells]) :- length(T, Len), Pos is (9 - Len),
-                                            get_valid_cells(T, EmptyCells).
+get_empty_cells([H|T], [Pos|EmptyCells]) :- length(T, Len), Pos is (9 - Len),
+                                            get_empty_cells(T, EmptyCells).
 
 insert_char_at_position(Char, 1, [GridH|GridT], [Char|GridT]). % :- !.
 insert_char_at_position(Char, Position, [GridH|GridT], [GridH|NewGridT]) :- 
@@ -366,3 +401,5 @@ print_grid([One, Two, Three, Four, Five, Six, Seven, Eight, Nine]) :-
 ```
 ______________
 *EOL*
+
+[^1]: 10 Marks out of 18
