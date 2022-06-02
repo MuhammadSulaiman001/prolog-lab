@@ -68,18 +68,6 @@ not(rule).
     
 Swi-Prolog -> Debug -> Graphical Debugger -> `?- trace.` -> some query -> use the arrows to step in/over the code.
 
-## Check if predicate is defined
-using **`current_predicate()`** function
-
-```prolog
-?- current_predicate(a/1). % predicate a/1 is not defined
-%    false
-?- assert(a(10)). % define a/1
-%    true
-?- current_predicate(a/1). % prolog recognizes it
-%    true
-```
-
 ## Unit Testing
 
 - See [testing_demo](/testing_demo)
