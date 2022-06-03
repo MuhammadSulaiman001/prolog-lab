@@ -404,13 +404,13 @@ insert_char_at_position(Char, Position, [GridH|GridT], [GridH|NewGridT]) :-
 
 % Answer4.
 get_winner_name([A, A, A, Four, Five, Six, Seven, Eight, Nine], A) :- A = x; A = o.
-get_winner_name([One, Two, Three, A, A, A, Seven, Eight, Nine], x) :- A = x; A = o.
-get_winner_name([One, Two, Three, Four, Five, Six, A, A, A], x) :- A = x; A = o.
-get_winner_name([A, Two, Three, A, Five, Six, A, Eight, Nine], x) :- A = x; A = o.
-get_winner_name([One, A, Three, Four, A, Six, Seven, A, Nine], x) :- A = x; A = o.
-get_winner_name([One, Two, A, Four, Five, A, Seven, Eight, A], x) :- A = x; A = o.
-get_winner_name([A, Two, Three, Four, A, Six, Seven, Eight, A], x) :- A = x; A = o.
-get_winner_name([One, Two, A, Four, A, Six, A, Eight, Nine], x) :- A = x; A = o.
+get_winner_name([One, Two, Three, A, A, A, Seven, Eight, Nine], A) :- A = x; A = o.
+get_winner_name([One, Two, Three, Four, Five, Six, A, A, A], A) :- A = x; A = o.
+get_winner_name([A, Two, Three, A, Five, Six, A, Eight, Nine], A) :- A = x; A = o.
+get_winner_name([One, A, Three, Four, A, Six, Seven, A, Nine], A) :- A = x; A = o.
+get_winner_name([One, Two, A, Four, Five, A, Seven, Eight, A], A) :- A = x; A = o.
+get_winner_name([A, Two, Three, Four, A, Six, Seven, Eight, A], A) :- A = x; A = o.
+get_winner_name([One, Two, A, Four, A, Six, A, Eight, Nine], A) :- A = x; A = o.
 get_winner_name(_, noBody).
     
 % Answer5.
