@@ -15,6 +15,12 @@
 cls :- write('\e[2J').
 ```
 
+## Enable dark mode
+
+```prolog
+:- use_module(library(theme/dark)).
+```
+
 ## Comments
 ```prolog
 % Single line comment 
