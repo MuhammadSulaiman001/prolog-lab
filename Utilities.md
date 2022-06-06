@@ -17,7 +17,7 @@
 ?- ansi_format([bg(cyan)], 'This has a cyan background', []).
 ?- ansi_format([bg(cyan),fg(magenta),bold], 'We can mix them', []).
 % reset, bold, fg(Color), bg(Color),...
-?- ansi_format([italic], 'This also formats the string (~w = 5)', [5]).
+?- ansi_format([], 'This also formats the string (~w = 5)', [5]).
 ```
 
 ## Clear the console
