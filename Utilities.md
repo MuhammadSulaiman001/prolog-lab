@@ -30,6 +30,8 @@ cls :- write('\e[2J').
 
 ```prolog
 :- use_module(library(theme/dark)).
+% Or in the terminal/console
+?- use_module(library(theme/dark)).
 ```
 
 ## Comments
