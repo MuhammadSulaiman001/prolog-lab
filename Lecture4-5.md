@@ -4,8 +4,8 @@
 
 Suppose we have the following dialogue:
 
-* Ahmad says: "I do nothing"
-* Dan says: "I do nothing"
+* Ahmad says: "I did nothing"
+* Dan says: "I did nothing"
 * Bassel says: "Dan is guilty"
 * Camal says: "Bassel is guilty"
 
