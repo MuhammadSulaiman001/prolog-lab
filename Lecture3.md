@@ -50,7 +50,7 @@ _______
 ### **`meter_2_killo/2`**
 
 ```prolog
-meter_2_killo(Killo, Meter) :- Meter is Killo * 1000;
+killo2_meter(Killo, Meter) :- Meter is Killo * 1000;
 ```
 
 ### **`calc_distance/3`**
