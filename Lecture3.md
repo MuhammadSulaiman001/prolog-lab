@@ -50,7 +50,7 @@ _______
 ### **`meter_2_killo/2`**
 
 ```prolog
-killo2_meter(Killo, Meter) :- Meter is Killo * 1000;
+killo_2_meter(Killo, Meter) :- Meter is Killo * 1000;
 ```
 
 ### **`calc_distance/3`**
@@ -63,9 +63,9 @@ calc_distance(Speed, Time, Distance) :- Distance is Speed * Time.
 
 ```prolog
 car_speed(blue_car, 50).
-stopwatch(blue_car, 10).
+elapsed_time(blue_car, 10).
 
-calc_distance(Car, Distance) :- car_speed(Car, Speed), stopwatch(Car, Time),
+calc_distance(Car, Distance) :- car_speed(Car, Speed), elapsed_time(Car, Time),
                                 calc_distance(Speed, Time, Distance).
 
 % ?- calc_distance(blue_car, Distance).
