@@ -137,7 +137,7 @@ run :-  write('Enter the first number: '), read(FirstNumber),
 ## Lists
 
 ```prolog
-?- L = [mia,  [vincent,  jules],  [tom,  wife(tom)], 2, true, []]
+?- L = [mia,  [vincent,  jules],  [tom,  wife(tom)], 2, true, []].
 
 ?- [Head|Tail] = [mia,  tom,  julie,  mike].
 
