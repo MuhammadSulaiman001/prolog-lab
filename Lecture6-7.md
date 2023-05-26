@@ -302,6 +302,10 @@ descend(X, Y) :- child(X, Z), descend(Z, Y).
 % ?- findall(X, child(X, Y), Z).
 % ?- findall(Y, child(X, Y), Z).
 % ?- findall(X, descend(martha, X), Z), length(Z, N).
+
+get_range(Min, Max, List) :- findall(X, between(Min, Max, X), List).
+
+get_positive_elements(List, PosList) :- findall(X, (member(X, List), X >= 0), PosList).
 ```
 
 ## QUIZ (2-6-2022, duration = 1 hour)
