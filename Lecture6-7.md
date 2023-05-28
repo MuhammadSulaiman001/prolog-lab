@@ -282,8 +282,19 @@ fib(X,Y) :- X>1,X1 is X - 1, X2 is X - 2,
             fib(X1,Y1),fib(X2,Y2),
             Y is Y1 + Y2,
             % save the query result as a fact.
-            % note: assertz is useless for performance in this case.
-            asserta(fib(X,Y)).
+            % note: assertz is useless in this case.
+	    % if ! is not used, then prolog will want to try the recursive rule after using the asserted fact
+            asserta(fib(X, Y) :- !), !.
+
+% time(:Goal) will log how many recursive calls occurs to find out the query result, call `help(time)` to read its documentation.
+% the first fib(15, Res) needs 72 inferences, but the second time you ask for fib(15, Res) it will take 0 inferences, because it is stored as a fact
+?- time(fib(15, Res)).
+% 72 inferences, 0.000 CPU in 0.000 seconds (?% CPU, Infinite Lips)
+Res = 987.
+
+?- time(fib(15, Res)).
+% 0 inferences, 0.000 CPU in 0.000 seconds (?% CPU, Infinite Lips)
+Res = 987 .
 ```
 Note: more examples on assert, retract can be found in [Utilities.md](/Utilities.md)
 
