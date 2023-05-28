@@ -325,6 +325,8 @@ get_range(Min, Max, List) :- findall(X, between(Min, Max, X), List).
 get_positive_elements(List, PosList) :- findall(X, (member(X, List), X >= 0), PosList).
 ```
 
+Question: Can you implement `is_prime/1` using findall and between?
+
 ## QUIZ (2-6-2022, duration = 1 hour)
 
 <p align="center">
