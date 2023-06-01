@@ -24,14 +24,16 @@ get_numbers([H|T], Numbers) :- get_numbers(T, Numbers), !.
 
 sum([], 0).
 sum([H|T], Sum) :- sum(T, TSum), Sum is TSum + H.
+% Note: you can use predefined sum_list/2 properly!
 
-get_avg_solution2(List, Result) :- get_numbers(List, ListOfNumbers), sum(ListOfNumbers, Sum), 
+get_avg(List, Result) :- get_numbers(List, ListOfNumbers), sum(ListOfNumbers, Sum), 
 								   length(ListOfNumbers, Length), 
 								   Result is Sum / Length.
 
 % Solution 2 (without using get_numbers/2)
 
-get_avg(List, Result) :- get_avg(List, 0, 0, Result).
-get_avg([], Sum, Count, Result) :- Result is Sum / Count.
-get_avg([H|T], Sum, Count, Result):- integer(H), NewCount is Count + 1, NewSum is Sum + H, get_avg(T, NewSum, NewCount, Result), !.
-get_avg([H|T], Sum, Count, Result):- get_avg(T, Sum, Count, Result), !.
+get_avg_solution2(List, Result) :- get_avg_solution2(List, 0, 0, Result).
+get_avg_solution2([], Sum, Count, Result) :- Result is Sum / Count.
+get_avg_solution2([H|T], Sum, Count, Result):- integer(H), NewCount is Count + 1, NewSum is Sum + H, 
+									 get_avg_solution2(T, NewSum, NewCount, Result), !.
+get_avg_solution2([H|T], Sum, Count, Result):- get_avg_solution2(T, Sum, Count, Result), !.
