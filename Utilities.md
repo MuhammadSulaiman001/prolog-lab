@@ -9,36 +9,22 @@
 ?- X is 3 + 5, write(X).
 ```
 
-### With colors
-
-```prolog
-?- ansi_format([fg(red)], 'This is in red', []).
-% black, red, green, yellow, blue, magenta, cyan, white
-?- ansi_format([bg(cyan)], 'This has a cyan background', []).
-?- ansi_format([bg(cyan),fg(magenta),bold], 'We can mix them', []).
-% reset, bold, fg(Color), bg(Color),...
-?- ansi_format([], 'This also formats the string (~w = 5)', [5]).
-```
-
 ## Clear the console
 
 ```prolog
+% define this rule at the top of the .pl file, then call it like 
+% ?- cls.
 cls :- write('\e[2J').
-```
-
-## Enable dark mode
-
-```prolog
-:- use_module(library(theme/dark)).
-% Or in the terminal/console
-?- use_module(library(theme/dark)).
 ```
 
 ## Comments
 ```prolog
 % Single line comment 
-
-/* Mutli-Line comment */
+/* 
+Mutli
+Line 
+comment 
+*/
 ```
 
 ## Reload the file in prolog
@@ -69,6 +55,8 @@ cls :- write('\e[2J').
 halt.
 ```
 
+## If an exception occurs, type `a` to start a new query.
+
 ## Read user input example
 
 ```prolog
@@ -80,7 +68,6 @@ write('Enter the first number: '), read(FirstNumber).
 ```prolog
 \+ rule.
 not(rule).
-
 ```
 
 ## Debugging
@@ -109,4 +96,25 @@ Swi-Prolog -> Debug -> Graphical Debugger -> `?- trace.` -> some query -> use th
 %    A = 1
 ?- (a\=a -> A=1; A=0)
 %    A = 0
+```
+
+## Configuring the console!
+
+### With colors
+
+```prolog
+?- ansi_format([fg(red)], 'This is in red', []).
+% black, red, green, yellow, blue, magenta, cyan, white
+?- ansi_format([bg(cyan)], 'This has a cyan background', []).
+?- ansi_format([bg(cyan),fg(magenta),bold], 'We can mix them', []).
+% reset, bold, fg(Color), bg(Color),...
+?- ansi_format([], 'This also formats the string (~w = 5)', [5]).
+```
+
+## Enable dark mode
+
+```prolog
+:- use_module(library(theme/dark)).
+% Or in the terminal/console
+?- use_module(library(theme/dark)).
 ```
